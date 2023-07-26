@@ -14,6 +14,11 @@ RSpec.describe Item, type: :model do
         expect(item.message).to eq "Item name is iPhone"
       end
 
+      it "returns another valid message" do
+        item = Item.create(name: 'Samsung')
+        expect(item.message).to eq "Item name is Samsung"
+      end
+
       it 'name is valid' do
         item = Item.create(name: 'iPhone')
         expect(item.name).to eq "iPhone"
